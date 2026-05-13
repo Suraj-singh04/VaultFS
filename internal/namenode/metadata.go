@@ -1,6 +1,7 @@
 package namenode
 
 import "time"
+import "sync"
 
 type DataNode struct {
 	ID   string
@@ -18,9 +19,11 @@ type FileMetaData struct {
 type ChunkMetaData struct {
 	ChunkID string
 	DataNodes []string
+	ConfirmedNodes []string
 }
 
 type NameNode struct {
+	mu sync.RWMutex
 	DataNodes map[string]DataNode
 	Files map[string]FileMetaData
 	Chunks map[string]ChunkMetaData
