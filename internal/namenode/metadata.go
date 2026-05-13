@@ -1,14 +1,16 @@
 package namenode
 
-import "time"
-import "sync"
+import (
+	"sync"
+	"time"
+)
 
 type DataNode struct {
-	ID   string
-	IP   string
-	Port int
+	ID               string
+	IP               string
+	Port             int
 	AvailableStorage int64
-	LastHeartbeat time.Time 
+	LastHeartbeat    time.Time
 }
 
 type FileMetaData struct {
@@ -17,14 +19,14 @@ type FileMetaData struct {
 }
 
 type ChunkMetaData struct {
-	ChunkID string
-	DataNodes []string
+	ChunkID        string
+	DataNodes      []string
 	ConfirmedNodes []string
 }
 
 type NameNode struct {
-	mu sync.RWMutex
+	mu        sync.RWMutex
 	DataNodes map[string]DataNode
-	Files map[string]FileMetaData
-	Chunks map[string]ChunkMetaData
+	Files     map[string]FileMetaData
+	Chunks    map[string]ChunkMetaData
 }
