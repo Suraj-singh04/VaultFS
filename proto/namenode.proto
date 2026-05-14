@@ -1,0 +1,62 @@
+syntax = "proto3";
+package namenode;
+
+option go_package = "github.com/Suraj-singh04/vaultfs/proto/namenode";
+
+service NameNode {
+  rpc RegisterNode (RegisterNodeRequest) returns (RegisterNodeResponse);
+  rpc Heartbeat (HeartbeatRequest) returns (HeartbeatResponse);
+  rpc AllocateChunks (AllocateChunksRequest) returns (AllocateChunksResponse);
+  rpc ConfirmChunk (ConfirmChunkRequest) returns (ConfirmChunkResponse);
+  rpc GetFileLocation (GetFileLocationRequest) returns (GetFileLocationResponse);
+}
+
+message RegisterNodeRequest {
+    string ip = 1;
+    int32 port = 2;
+    int64 available_space = 3;
+}
+
+message RegisterNodeResponse {
+    string node_id = 1;
+    string message = 2;
+}
+
+message HeartbeatRequest {
+    string node_id = 1;
+    int64 available_space = 2;
+}
+
+message HeartbeatResponse {
+    bool alive = 1;
+}
+
+message AllocateChunksRequest {
+    string file_name = 1;
+    repeated string chunk_ids = 2;
+}
+
+message NodeList {
+    repeated string node_ids = 1;
+}
+
+message AllocateChunksResponse {
+    map<string, NodeList> chunk_locations = 1;
+}
+
+message ConfirmChunkRequest {
+    string chunk_id = 1;
+    string node_id = 2;
+}
+
+message ConfirmChunkResponse {
+    bool success = 1;
+}
+
+message GetFileLocationRequest {
+    string file_name = 1;
+}
+
+message GetFileLocationResponse {
+  map<string, NodeList> chunk_locations = 1;
+}
