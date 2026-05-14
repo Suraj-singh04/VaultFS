@@ -1,0 +1,26 @@
+syntax="proto3";
+package datanode;
+
+option go_package = "github.com/Suraj-singh04/vaultfs/proto/datanode";
+
+service DataNode {
+    rpc StoreChunk (stream StoreChunkRequest) returns (StoreChunkResponse);
+    rpc FetchChunk (RetrieveChunkRequest) returns (stream RetrieveChunkResponse);
+}
+
+message StoreChunkRequest {
+  string chunk_id = 1;
+bytes data = 2;
+}
+
+message StoreChunkResponse {
+  bool success = 1;
+}
+
+message RetrieveChunkRequest {
+  string chunk_id = 1;
+}
+
+message RetrieveChunkResponse {
+    bytes data = 1;
+}
