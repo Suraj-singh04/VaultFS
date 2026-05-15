@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v7.34.1
-// source: proto/namenode.proto
+// source: proto/namenode/namenode.proto
 
 package namenode
 
@@ -32,7 +32,7 @@ type RegisterNodeRequest struct {
 
 func (x *RegisterNodeRequest) Reset() {
 	*x = RegisterNodeRequest{}
-	mi := &file_proto_namenode_proto_msgTypes[0]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +44,7 @@ func (x *RegisterNodeRequest) String() string {
 func (*RegisterNodeRequest) ProtoMessage() {}
 
 func (x *RegisterNodeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[0]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *RegisterNodeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterNodeRequest.ProtoReflect.Descriptor instead.
 func (*RegisterNodeRequest) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{0}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RegisterNodeRequest) GetIp() string {
@@ -91,7 +91,7 @@ type RegisterNodeResponse struct {
 
 func (x *RegisterNodeResponse) Reset() {
 	*x = RegisterNodeResponse{}
-	mi := &file_proto_namenode_proto_msgTypes[1]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -103,7 +103,7 @@ func (x *RegisterNodeResponse) String() string {
 func (*RegisterNodeResponse) ProtoMessage() {}
 
 func (x *RegisterNodeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[1]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -116,7 +116,7 @@ func (x *RegisterNodeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterNodeResponse.ProtoReflect.Descriptor instead.
 func (*RegisterNodeResponse) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{1}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RegisterNodeResponse) GetNodeId() string {
@@ -143,7 +143,7 @@ type HeartbeatRequest struct {
 
 func (x *HeartbeatRequest) Reset() {
 	*x = HeartbeatRequest{}
-	mi := &file_proto_namenode_proto_msgTypes[2]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -155,7 +155,7 @@ func (x *HeartbeatRequest) String() string {
 func (*HeartbeatRequest) ProtoMessage() {}
 
 func (x *HeartbeatRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[2]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -168,7 +168,7 @@ func (x *HeartbeatRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeartbeatRequest.ProtoReflect.Descriptor instead.
 func (*HeartbeatRequest) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{2}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *HeartbeatRequest) GetNodeId() string {
@@ -194,7 +194,7 @@ type HeartbeatResponse struct {
 
 func (x *HeartbeatResponse) Reset() {
 	*x = HeartbeatResponse{}
-	mi := &file_proto_namenode_proto_msgTypes[3]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -206,7 +206,7 @@ func (x *HeartbeatResponse) String() string {
 func (*HeartbeatResponse) ProtoMessage() {}
 
 func (x *HeartbeatResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[3]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -219,7 +219,7 @@ func (x *HeartbeatResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeartbeatResponse.ProtoReflect.Descriptor instead.
 func (*HeartbeatResponse) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{3}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *HeartbeatResponse) GetAlive() bool {
@@ -239,7 +239,7 @@ type AllocateChunksRequest struct {
 
 func (x *AllocateChunksRequest) Reset() {
 	*x = AllocateChunksRequest{}
-	mi := &file_proto_namenode_proto_msgTypes[4]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -251,7 +251,7 @@ func (x *AllocateChunksRequest) String() string {
 func (*AllocateChunksRequest) ProtoMessage() {}
 
 func (x *AllocateChunksRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[4]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -264,7 +264,7 @@ func (x *AllocateChunksRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AllocateChunksRequest.ProtoReflect.Descriptor instead.
 func (*AllocateChunksRequest) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{4}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AllocateChunksRequest) GetFileName() string {
@@ -290,7 +290,7 @@ type NodeList struct {
 
 func (x *NodeList) Reset() {
 	*x = NodeList{}
-	mi := &file_proto_namenode_proto_msgTypes[5]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -302,7 +302,7 @@ func (x *NodeList) String() string {
 func (*NodeList) ProtoMessage() {}
 
 func (x *NodeList) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[5]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -315,7 +315,7 @@ func (x *NodeList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NodeList.ProtoReflect.Descriptor instead.
 func (*NodeList) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{5}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *NodeList) GetNodeIds() []string {
@@ -334,7 +334,7 @@ type AllocateChunksResponse struct {
 
 func (x *AllocateChunksResponse) Reset() {
 	*x = AllocateChunksResponse{}
-	mi := &file_proto_namenode_proto_msgTypes[6]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -346,7 +346,7 @@ func (x *AllocateChunksResponse) String() string {
 func (*AllocateChunksResponse) ProtoMessage() {}
 
 func (x *AllocateChunksResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[6]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -359,7 +359,7 @@ func (x *AllocateChunksResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AllocateChunksResponse.ProtoReflect.Descriptor instead.
 func (*AllocateChunksResponse) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{6}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *AllocateChunksResponse) GetChunkLocations() map[string]*NodeList {
@@ -379,7 +379,7 @@ type ConfirmChunkRequest struct {
 
 func (x *ConfirmChunkRequest) Reset() {
 	*x = ConfirmChunkRequest{}
-	mi := &file_proto_namenode_proto_msgTypes[7]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -391,7 +391,7 @@ func (x *ConfirmChunkRequest) String() string {
 func (*ConfirmChunkRequest) ProtoMessage() {}
 
 func (x *ConfirmChunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[7]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -404,7 +404,7 @@ func (x *ConfirmChunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfirmChunkRequest.ProtoReflect.Descriptor instead.
 func (*ConfirmChunkRequest) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{7}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ConfirmChunkRequest) GetChunkId() string {
@@ -430,7 +430,7 @@ type ConfirmChunkResponse struct {
 
 func (x *ConfirmChunkResponse) Reset() {
 	*x = ConfirmChunkResponse{}
-	mi := &file_proto_namenode_proto_msgTypes[8]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -442,7 +442,7 @@ func (x *ConfirmChunkResponse) String() string {
 func (*ConfirmChunkResponse) ProtoMessage() {}
 
 func (x *ConfirmChunkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[8]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -455,7 +455,7 @@ func (x *ConfirmChunkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfirmChunkResponse.ProtoReflect.Descriptor instead.
 func (*ConfirmChunkResponse) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{8}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ConfirmChunkResponse) GetSuccess() bool {
@@ -474,7 +474,7 @@ type GetFileLocationRequest struct {
 
 func (x *GetFileLocationRequest) Reset() {
 	*x = GetFileLocationRequest{}
-	mi := &file_proto_namenode_proto_msgTypes[9]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -486,7 +486,7 @@ func (x *GetFileLocationRequest) String() string {
 func (*GetFileLocationRequest) ProtoMessage() {}
 
 func (x *GetFileLocationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[9]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -499,7 +499,7 @@ func (x *GetFileLocationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFileLocationRequest.ProtoReflect.Descriptor instead.
 func (*GetFileLocationRequest) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{9}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetFileLocationRequest) GetFileName() string {
@@ -518,7 +518,7 @@ type GetFileLocationResponse struct {
 
 func (x *GetFileLocationResponse) Reset() {
 	*x = GetFileLocationResponse{}
-	mi := &file_proto_namenode_proto_msgTypes[10]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -530,7 +530,7 @@ func (x *GetFileLocationResponse) String() string {
 func (*GetFileLocationResponse) ProtoMessage() {}
 
 func (x *GetFileLocationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_namenode_proto_msgTypes[10]
+	mi := &file_proto_namenode_namenode_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -543,7 +543,7 @@ func (x *GetFileLocationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFileLocationResponse.ProtoReflect.Descriptor instead.
 func (*GetFileLocationResponse) Descriptor() ([]byte, []int) {
-	return file_proto_namenode_proto_rawDescGZIP(), []int{10}
+	return file_proto_namenode_namenode_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetFileLocationResponse) GetChunkLocations() map[string]*NodeList {
@@ -553,11 +553,11 @@ func (x *GetFileLocationResponse) GetChunkLocations() map[string]*NodeList {
 	return nil
 }
 
-var File_proto_namenode_proto protoreflect.FileDescriptor
+var File_proto_namenode_namenode_proto protoreflect.FileDescriptor
 
-const file_proto_namenode_proto_rawDesc = "" +
+const file_proto_namenode_namenode_proto_rawDesc = "" +
 	"\n" +
-	"\x14proto/namenode.proto\x12\bnamenode\"b\n" +
+	"\x1dproto/namenode/namenode.proto\x12\bnamenode\"b\n" +
 	"\x13RegisterNodeRequest\x12\x0e\n" +
 	"\x02ip\x18\x01 \x01(\tR\x02ip\x12\x12\n" +
 	"\x04port\x18\x02 \x01(\x05R\x04port\x12'\n" +
@@ -600,19 +600,19 @@ const file_proto_namenode_proto_rawDesc = "" +
 	"\x0fGetFileLocation\x12 .namenode.GetFileLocationRequest\x1a!.namenode.GetFileLocationResponseB1Z/github.com/Suraj-singh04/vaultfs/proto/namenodeb\x06proto3"
 
 var (
-	file_proto_namenode_proto_rawDescOnce sync.Once
-	file_proto_namenode_proto_rawDescData []byte
+	file_proto_namenode_namenode_proto_rawDescOnce sync.Once
+	file_proto_namenode_namenode_proto_rawDescData []byte
 )
 
-func file_proto_namenode_proto_rawDescGZIP() []byte {
-	file_proto_namenode_proto_rawDescOnce.Do(func() {
-		file_proto_namenode_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_namenode_proto_rawDesc), len(file_proto_namenode_proto_rawDesc)))
+func file_proto_namenode_namenode_proto_rawDescGZIP() []byte {
+	file_proto_namenode_namenode_proto_rawDescOnce.Do(func() {
+		file_proto_namenode_namenode_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_namenode_namenode_proto_rawDesc), len(file_proto_namenode_namenode_proto_rawDesc)))
 	})
-	return file_proto_namenode_proto_rawDescData
+	return file_proto_namenode_namenode_proto_rawDescData
 }
 
-var file_proto_namenode_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
-var file_proto_namenode_proto_goTypes = []any{
+var file_proto_namenode_namenode_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_proto_namenode_namenode_proto_goTypes = []any{
 	(*RegisterNodeRequest)(nil),     // 0: namenode.RegisterNodeRequest
 	(*RegisterNodeResponse)(nil),    // 1: namenode.RegisterNodeResponse
 	(*HeartbeatRequest)(nil),        // 2: namenode.HeartbeatRequest
@@ -627,7 +627,7 @@ var file_proto_namenode_proto_goTypes = []any{
 	nil,                             // 11: namenode.AllocateChunksResponse.ChunkLocationsEntry
 	nil,                             // 12: namenode.GetFileLocationResponse.ChunkLocationsEntry
 }
-var file_proto_namenode_proto_depIdxs = []int32{
+var file_proto_namenode_namenode_proto_depIdxs = []int32{
 	11, // 0: namenode.AllocateChunksResponse.chunk_locations:type_name -> namenode.AllocateChunksResponse.ChunkLocationsEntry
 	12, // 1: namenode.GetFileLocationResponse.chunk_locations:type_name -> namenode.GetFileLocationResponse.ChunkLocationsEntry
 	5,  // 2: namenode.AllocateChunksResponse.ChunkLocationsEntry.value:type_name -> namenode.NodeList
@@ -649,26 +649,26 @@ var file_proto_namenode_proto_depIdxs = []int32{
 	0,  // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_proto_namenode_proto_init() }
-func file_proto_namenode_proto_init() {
-	if File_proto_namenode_proto != nil {
+func init() { file_proto_namenode_namenode_proto_init() }
+func file_proto_namenode_namenode_proto_init() {
+	if File_proto_namenode_namenode_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_namenode_proto_rawDesc), len(file_proto_namenode_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_namenode_namenode_proto_rawDesc), len(file_proto_namenode_namenode_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_namenode_proto_goTypes,
-		DependencyIndexes: file_proto_namenode_proto_depIdxs,
-		MessageInfos:      file_proto_namenode_proto_msgTypes,
+		GoTypes:           file_proto_namenode_namenode_proto_goTypes,
+		DependencyIndexes: file_proto_namenode_namenode_proto_depIdxs,
+		MessageInfos:      file_proto_namenode_namenode_proto_msgTypes,
 	}.Build()
-	File_proto_namenode_proto = out.File
-	file_proto_namenode_proto_goTypes = nil
-	file_proto_namenode_proto_depIdxs = nil
+	File_proto_namenode_namenode_proto = out.File
+	file_proto_namenode_namenode_proto_goTypes = nil
+	file_proto_namenode_namenode_proto_depIdxs = nil
 }

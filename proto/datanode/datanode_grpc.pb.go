@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.2
 // - protoc             v7.34.1
-// source: proto/datanode.proto
+// source: proto/datanode/datanode.proto
 
 package datanode
 
@@ -151,5 +151,5 @@ var DataNode_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "proto/datanode.proto",
+	Metadata: "proto/datanode/datanode.proto",
 }
