@@ -1,12 +1,17 @@
 package namenode
 
-import "time"
+import (
+	"log"
+	"time"
+
+	"github.com/google/uuid"
+)
 
 func (n *NameNode) RegisterNode(ip string, port int, availableStorage int64) string {
 	n.mu.Lock()
 	defer n.mu.Unlock()
 
-	id := "xyz"
+	id := uuid.New().String()
 
 	n.DataNodes[id] = DataNode{
 		ID:               id,
@@ -41,10 +46,11 @@ func (n *NameNode) AllocateChunk(fileName string, chunkIDs []string) map[string]
 
 	healthyNodes := []DataNode{}
 	for _, node := range n.DataNodes {
-		if time.Since(node.LastHeartbeat) < 15*time.Second && node.AvailableStorage > 0 {
+		if time.Since(node.LastHeartbeat) < 40*time.Second && node.AvailableStorage > 0 {
 			healthyNodes = append(healthyNodes, node)
 		}
 	}
+	log.Printf("Healthy nodes count: %d", len(healthyNodes)) 
 
 	if len(healthyNodes) < 3 {
 		return nil
@@ -55,7 +61,7 @@ func (n *NameNode) AllocateChunk(fileName string, chunkIDs []string) map[string]
 	for _, chunkID := range chunkIDs {
 		for i := 0; i < 3; i++ {
 			node := healthyNodes[i]
-			chunkLocations[chunkID] = append(chunkLocations[chunkID], node.ID)
+			chunkLocations[chunkID] = append(chunkLocations[chunkID], node.IP)
 			node.AvailableStorage -= 64 * 1024 * 1024
 			n.DataNodes[node.ID] = node
 		}

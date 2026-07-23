@@ -2,6 +2,7 @@ package clientapi
 
 import (
 	"context"
+	"fmt"
 
 	pbNameNode "github.com/Suraj-singh04/vaultfs/proto/namenode"
 	"github.com/google/uuid"
@@ -37,13 +38,18 @@ func (c *Coordinator) UploadFile(filePath string, data []byte) error {
 
 	ctx := context.Background()
 
+	
 	resp, err := c.nameNodeClient.AllocateChunks(ctx, &pbNameNode.AllocateChunksRequest{
 		FileName: filePath,
 		ChunkIds: chunkIDs,
 	})
-
+	
 	if err != nil {
-		return err
+		return fmt.Errorf("AllocateChunks failed: %w", err)
+	}
+	
+	if resp == nil || resp.ChunkLocations == nil {
+		return fmt.Errorf("no chunk locations returned")
 	}
 
 	g, ctx := errgroup.WithContext(ctx)
@@ -51,6 +57,9 @@ func (c *Coordinator) UploadFile(filePath string, data []byte) error {
 	for _, ch := range chunks {
 		ch := ch
 		nodeList := resp.ChunkLocations[ch.id]
+		if nodeList == nil {
+			return fmt.Errorf("no nodes assigned for chunk %s", ch.id)
+		}
 
 		for _, nodeID := range nodeList.NodeIds {
 			nodeID := nodeID

@@ -2,6 +2,7 @@ package clientapi
 
 import (
 	"io"
+	"log"
 	"net/http"
 )
 
@@ -34,8 +35,10 @@ func (h *Handler) Upload(w http.ResponseWriter, r *http.Request) {
 	}
 
 	err = h.coordinator.UploadFile(filePath, data)
+	err = h.coordinator.UploadFile(filePath, data)
 	if err != nil {
-		http.Error(w, "Failed to upload file: "+err.Error(), http.StatusInternalServerError)
+		log.Printf("Upload error: %v", err)
+		http.Error(w, "Failed to upload: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 

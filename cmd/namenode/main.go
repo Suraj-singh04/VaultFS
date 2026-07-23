@@ -14,7 +14,7 @@ func main() {
 
 	handler := namenode.NewGrpcHandler(node)
 
-	listener, err := net.Listen("tcp", "50051")
+	listener, err := net.Listen("tcp", ":50051")
 
 	if err != nil {
 		log.Fatalf("Failed to listen: %v", err)

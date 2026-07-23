@@ -1,0 +1,81 @@
+services:
+  namenode:
+    build:
+      context: .
+      dockerfile: Dockerfile.namenode
+    ports:
+      - "50051:50051"
+    networks:
+      - vaultfs-network
+  datanode-1:
+    build:
+      context: .
+      dockerfile: Dockerfile.datanode
+    ports:
+      - "50052:50052"
+    environment:
+      - NAMENODE_ADDR=namenode:50051
+      - SERVICE_ADDR=datanode-1:50052
+      - NODE_ID=dn-1
+      - BASE_DIR=/data
+    volumes:
+      - datanode1-data:/data
+    depends_on:
+      - namenode
+    networks:
+      - vaultfs-network
+  datanode-2:
+    build:
+      context: .
+      dockerfile: Dockerfile.datanode
+    ports:
+      - "50053:50053"
+    environment:
+      - NAMENODE_ADDR=namenode:50051
+      - SERVICE_ADDR=datanode-2:50052
+      - NODE_ID=dn-2
+      - BASE_DIR=/data
+    volumes:
+      - datanode2-data:/data
+    depends_on:
+      - namenode
+    networks:
+      - vaultfs-network
+  datanode-3:
+    build:
+      context: .
+      dockerfile: Dockerfile.datanode
+    ports:
+      - "50054:50054"
+    environment:
+      - NAMENODE_ADDR=namenode:50051
+      - SERVICE_ADDR=datanode-3:50052
+      - NODE_ID=dn-3
+      - BASE_DIR=/data
+    volumes:
+      - datanode3-data:/data
+    depends_on:
+      - namenode
+    networks:
+      - vaultfs-network
+  clientapi:
+    build:
+      context: .
+      dockerfile: Dockerfile.clientapi
+    ports:
+      - "9090:8080"
+    environment:
+      - NAMENODE_ADDR=namenode:50051
+    depends_on:
+      - namenode
+    networks:
+      - vaultfs-network
+
+networks:
+  vaultfs-network:
+    driver: bridge
+
+volumes:
+  datanode1-data:
+  datanode2-data:
+  datanode3-data:

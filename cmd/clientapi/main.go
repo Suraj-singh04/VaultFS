@@ -3,12 +3,18 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/Suraj-singh04/vaultfs/internal/clientapi"
 )
 
 func main() {
-	coordinator, err := clientapi.NewCoordinator("localhost:50051")
+	nameNodeAddr := os.Getenv("NAMENODE_ADDR")
+	if nameNodeAddr == "" {
+		nameNodeAddr = "localhost:50051"
+	}
+
+	coordinator, err := clientapi.NewCoordinator(nameNodeAddr)
 	if err != nil {
 		log.Fatalf("Failed to connect to NameNode: %v", err)
 	}

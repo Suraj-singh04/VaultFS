@@ -2,6 +2,8 @@ package namenode
 
 import (
 	"context"
+	"fmt"
+	"log"
 
 	pb "github.com/Suraj-singh04/vaultfs/proto/namenode"
 )
@@ -31,7 +33,7 @@ func (h *GrpcHandler) Heartbeat(ctx context.Context, req *pb.HeartbeatRequest) (
 	return &pb.HeartbeatResponse{Alive: alive}, nil
 }
 
-func (h *GrpcHandler) GetFileLocations(ctx context.Context, req *pb.GetFileLocationRequest) (*pb.GetFileLocationResponse, error) {
+func (h *GrpcHandler) GetFileLocation(ctx context.Context, req *pb.GetFileLocationRequest) (*pb.GetFileLocationResponse, error) {
 
 	locations := h.node.GetFileLocations(req.FileName)
 
@@ -47,7 +49,12 @@ func (h *GrpcHandler) GetFileLocations(ctx context.Context, req *pb.GetFileLocat
 }
 
 func (h *GrpcHandler) AllocateChunks(ctx context.Context, req *pb.AllocateChunksRequest) (*pb.AllocateChunksResponse, error) {
+	log.Printf("AllocateChunks called for file: %s", req.FileName)
 	chunkLocations := h.node.AllocateChunk(req.FileName, req.ChunkIds)
+
+	if chunkLocations == nil {
+		return nil, fmt.Errorf("not enough healthy nodes available")
+	}
 
 	protoLocations := make(map[string]*pb.NodeList)
 

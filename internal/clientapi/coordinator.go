@@ -70,5 +70,10 @@ func (c *Coordinator) sendChunkToNode(ctx context.Context, nodeID, nodeAddr, chu
 		return fmt.Errorf("datanode rejected chunk %s", chunkID)
 	}
 
+	c.nameNodeClient.ConfirmChunk(ctx, &pbNameNode.ConfirmChunkRequest{
+		ChunkId: chunkID,
+		NodeId:  nodeID,
+	})
+
 	return nil
 }
